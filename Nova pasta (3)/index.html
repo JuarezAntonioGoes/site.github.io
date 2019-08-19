@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Nova pasta (3)/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Nova pasta (3)/chosen/chosen.css">
+    
+    <script type="text/javascript" src="../Nova pasta (3)/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../Nova pasta (3)/jquery-migrate-3.0.0.js"></script>
+    <script type="text/javascript" src="../Nova pasta (3)/jQuery-Mask-Plugin-master/src/jquery.mask.js"></script>
+    <script src="../Nova pasta (3)/chosen/chosen.jquery.js"></script>
+    <script type="text/javascript">
+                // Material Select Initialization
+            $(document).ready(function() {
+            
+                    $("#caixa").click(function(){
+                            if($("#outro").is(":enabled"))
+                            {
+                                $("#veicu").prop("disabled selected",false);
+                                $("#outro").prop("disabled",true);
+                            }
+                            else{
+                                $("#veicu").prop("disabled selected",true);
+                                $("#outro").prop("disabled",false);
+
+              }
+
+          }          
+          )
+
+                    $("#avaria").click(function(){
+
+                            if($("#avaria1, #avaria2, #avaria3, #avaria4").is(":enabled"))
+                            {
+                                $("#avaria1, #avaria2, #avaria3, #avaria4").prop("disabled",true);
+                            }
+                            else{
+                                $("#avaria1, #avaria2, #avaria3, #avaria4").prop("disabled",false);
+                            }
+                    }         
+          
+                    )
+// ///////////////////////////////////////////////////////////divisao/////////////////////////////
+
+            
+                    $(".country").chosen();
+                    $("#data").mask("00/00/0000")
+                    $("#km").mask("000.000.000.000", {reverse: true})
+                            
+                                        
+
+            });
+
+            function confirmacao(){
+                    return true;
+                    alert("ok ok");
+
+            }
+    </script>
+</head>
+<body>
+
+    
+    
+    
+    
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 cor1">
+                
+                
+            </div>
+            <div class=" col-md-9 col-lg-8 col-xs-9 cor">
+                <form action="" id="formulario" onsubmit="return confirmacao() "><br>
+                    <fieldset class="scheduler-border">
+                        <legend class="meio"> <h1 id="titulo">CONTROLE DE VIAGENS</h1></legend><br>
+                
+                    <br><br>
+                        <label for="" class="">Destino:</label>
+                        <input type="text" class="col-md-3 col-lg-4 " placeholder="Ex: Pouso Alegre-MG"><br><br>
+
+                        <label for="" class="">Selecione o veículo de tranporte usado:</label>
+                        <select class="mdb-select md-form browser-default custom-select country" searchable="Search here.." id="veicu">
+                            <option value="" disabled selected>Selecione o veículo</option>
+                            <option value="1" id="veicu">JIPE</option>
+                            <option value="2" id="veicu">Camaro</option>
+                                <option value="3">Fusca</option>
+                                <option value="3">Monza</option>
+                                <option value="3">Ja</option>
+                              </select>
+                              
+                              <br><br>
+
+                              
+                              
+                              <input type="checkbox" id="caixa">
+                              <label for="" class="">*Outro</label>
+                              <input type="text" class="col-md-6 col-lg-6" id="outro" disabled placeholder="Digite seu veículo se ele não estiver dentre as opções anteriores">
+                              <br><br>
+                              <INPUT TYPE="RADIO" NAME="OPCAO" VALUE="op1"> Saída
+                                <INPUT TYPE="RADIO" NAME="OPCAO" VALUE="op2"> Chegada <br><br>
+
+
+                            <!-- MOTORISTA -->
+                            <label for="" class="">Selecione o motorista:</label>
+                        <select class="mdb-select md-form browser-default  country" searchable="Search here.." id=""><br><br>
+                            <option value="" disabled selected>Selecione o motorista</option>
+                            <option value="1">carlinho</option>
+                            <option value="2">joaozinho</option>
+                                <option value="3">g1</option>
+                                <option value="3">g1d</option>
+                                <option value="3">k25</option>
+                              </select>
+
+
+                    <fieldset class="scheduler-border">
+                    <legend class="scheduler-border"> <input type="checkbox" id="avaria"> <label for="">Avarias:</label></legend><br>
+                    
+                                <input type="checkbox" name="avaria" id="avaria1" disabled>Placa Traseira   
+                                <input type="checkbox" name="avaria" id="avaria2"disabled>Placa Dianteira
+                                <input type="checkbox" name="avaria" id="avaria3"disabled>Pneus/Rodas <br>
+                                <input type="checkbox" name="avaria" id="avaria4"disabled>Lataria Geral
+                    </fieldset>
+            
+                        <br>
+                        <label for="">Data:</label>
+                        <input type="text" class="col-md-6 col-lg-2" placeholder="DD/MM/AAAA" id="data">
+                    
+                        
+            
+                        <label for="">KM:</label>
+                        <input type="text"class="col-md-6 col-lg-4" id="km">
+                    
+                        <br><br>
+            
+                        <label for="">Mensagem:</label>
+                        <input type="text" class="form-control">
+                    
+                        <br><br>
+
+                        <button type="button" class="btn btn-light btn-lg ">Enviar<span class="glyphicon glyphicon-search"></span></button>
+                    </form>
+                </div>
+                
+                        <div class="col-lg-2 cor1">
+                            
+                            
+                        </div>
+        </div>    
+    </div>
+    
+    
+    
+
+</body>
+</html>
